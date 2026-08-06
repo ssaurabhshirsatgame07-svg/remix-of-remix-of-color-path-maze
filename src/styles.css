@@ -1,0 +1,210 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CHROMA THREAD — design system
+ * Warm paper beige, ink brown, and a five-colour maze palette.
+ * All colours are oklch tokens; canvas reads the --maze-* / --board-* vars.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-board: var(--board);
+  --color-board-grid: var(--board-grid);
+  --color-board-track: var(--board-track);
+  --color-maze-rose: var(--maze-rose);
+  --color-maze-amber: var(--maze-amber);
+  --color-maze-teal: var(--maze-teal);
+  --color-maze-indigo: var(--maze-indigo);
+  --color-maze-plum: var(--maze-plum);
+  --color-heart: var(--maze-rose);
+  --color-chart-1: var(--maze-rose);
+  --color-chart-2: var(--maze-amber);
+  --color-chart-3: var(--maze-teal);
+  --color-chart-4: var(--maze-indigo);
+  --color-chart-5: var(--maze-plum);
+  --color-sidebar: var(--card);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+  --shadow-soft: 0 1px 0 0 oklch(1 0 0 / 0.7) inset, 0 8px 20px -12px oklch(0.34 0.06 55 / 0.45);
+  --shadow-lift: 0 18px 40px -22px oklch(0.34 0.06 55 / 0.55);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.945 0.021 84);
+  --foreground: oklch(0.3 0.045 55);
+  --card: oklch(0.973 0.014 86);
+  --card-foreground: oklch(0.3 0.045 55);
+  --popover: oklch(0.973 0.014 86);
+  --popover-foreground: oklch(0.3 0.045 55);
+  --primary: oklch(0.58 0.14 40);
+  --primary-foreground: oklch(0.98 0.01 86);
+  --secondary: oklch(0.9 0.028 84);
+  --secondary-foreground: oklch(0.34 0.045 55);
+  --muted: oklch(0.915 0.023 84);
+  --muted-foreground: oklch(0.52 0.035 60);
+  --accent: oklch(0.88 0.045 78);
+  --accent-foreground: oklch(0.32 0.05 50);
+  --destructive: oklch(0.58 0.19 22);
+  --destructive-foreground: oklch(0.98 0.01 86);
+  --border: oklch(0.87 0.026 80);
+  --input: oklch(0.87 0.026 80);
+  --ring: oklch(0.58 0.14 40);
+
+  --board: oklch(0.966 0.017 86);
+  --board-grid: oklch(0.86 0.026 80);
+  --board-track: oklch(0.9 0.024 82);
+
+  --maze-rose: oklch(0.63 0.176 18);
+  --maze-amber: oklch(0.76 0.152 68);
+  --maze-teal: oklch(0.62 0.106 190);
+  --maze-indigo: oklch(0.53 0.115 258);
+  --maze-plum: oklch(0.55 0.128 330);
+}
+
+.dark {
+  --background: oklch(0.26 0.024 62);
+  --foreground: oklch(0.94 0.017 84);
+  --card: oklch(0.31 0.026 62);
+  --card-foreground: oklch(0.94 0.017 84);
+  --popover: oklch(0.31 0.026 62);
+  --popover-foreground: oklch(0.94 0.017 84);
+  --primary: oklch(0.7 0.14 45);
+  --primary-foreground: oklch(0.22 0.03 60);
+  --secondary: oklch(0.35 0.026 62);
+  --secondary-foreground: oklch(0.94 0.017 84);
+  --muted: oklch(0.35 0.026 62);
+  --muted-foreground: oklch(0.75 0.02 74);
+  --accent: oklch(0.38 0.035 60);
+  --accent-foreground: oklch(0.94 0.017 84);
+  --destructive: oklch(0.65 0.19 22);
+  --destructive-foreground: oklch(0.98 0.01 86);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.7 0.14 45);
+
+  --board: oklch(0.31 0.026 62);
+  --board-grid: oklch(0.38 0.03 62);
+  --board-track: oklch(0.37 0.03 62);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    overscroll-behavior: none;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 0, "WONK" 1;
+  letter-spacing: -0.02em;
+}
+
+@utility paper {
+  background-image:
+    radial-gradient(circle at 18% 12%, oklch(1 0 0 / 0.55), transparent 55%),
+    radial-gradient(circle at 82% 88%, oklch(0.86 0.05 62 / 0.35), transparent 60%);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shake-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes heart-loss {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35) rotate(-8deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@utility animate-pop-in {
+  animation: pop-in 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility animate-shake {
+  animation: shake-x 420ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@utility animate-heart-loss {
+  animation: heart-loss 420ms ease-out;
+}
