@@ -1,9 +1,8 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
+
 @source "../src";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
 /*
  * CHROMA THREAD — design system
  * Warm paper beige, ink brown, and a five-colour maze palette.
